@@ -12,3 +12,5 @@
  * itd.
  *
  */
+
+//Zadanie rozwiązane w pliku ex_2_1.js
