@@ -34,17 +34,17 @@ let speed = 49;
 let typeOfRoad = 'city';
 
 speedTest=(speed, typeOfRoad = 'city')=>{
-    if(typeOfRoad==='city'&&speed<=CITY_SPEED_LIMIT){
+    if(typeOfRoad === 'city' && speed <= CITY_SPEED_LIMIT){
         console.log("Miasto: jedziesz prawidłowo");
-    }else if (typeOfRoad==='city'&&speed>CITY_SPEED_LIMIT){
+    }else if (typeOfRoad === 'city' && speed > CITY_SPEED_LIMIT){
         console.log('Miasto: przekroczyłes prędkość');
-    }else if (typeOfRoad==="expressway"&&speed<=TWO_LANE_EXPRESSWAY_SPEED_LIMIT){
+    }else if (typeOfRoad === "expressway" && speed <= TWO_LANE_EXPRESSWAY_SPEED_LIMIT){
         console.log("Eska: jedziesz prawidłowo");
-    }else if (typeOfRoad==="expressway"&&speed>TWO_LANE_EXPRESSWAY_SPEED_LIMIT){
+    }else if (typeOfRoad === "expressway" && speed > TWO_LANE_EXPRESSWAY_SPEED_LIMIT){
         console.log("Eska: przekroczyłes prędkość");
-    }else if(typeOfRoad==='highway'&&speed<=HIGHWAY_SPEED_LIMIT){
+    }else if(typeOfRoad === 'highway' && speed <= HIGHWAY_SPEED_LIMIT){
         console.log("Autostrada: jedziesz prawidłowo");
-    }else if(typeOfRoad==='highway'&&speed>HIGHWAY_SPEED_LIMIT){
+    }else if(typeOfRoad === 'highway' && speed > HIGHWAY_SPEED_LIMIT){
         console.log("Autostrada: przekroczyles prędkość");
     };
 
