@@ -3,5 +3,5 @@ title: CodeMe
 theme: jekyll-theme-merlot
 
 # SITE CONFIGURATION
-baseurl: ""
+baseurl: "https://wiktort.github.io/CodeMe/"
 url: "https://wiktort.github.io/CodeMe/"
