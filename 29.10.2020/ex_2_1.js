@@ -33,7 +33,8 @@ const HIGHWAY_SPEED_LIMIT = 140;
 let speed = 49;
 let typeOfRoad = 'city';
 
-speedTest=(speed, typeOfRoad = 'city')=>{
+const speedTest = (speed, typeOfRoad = 'city')=>{
+    
     if(typeOfRoad === 'city' && speed <= CITY_SPEED_LIMIT){
         console.log("Miasto: jedziesz prawidłowo");
     }else if (typeOfRoad === 'city' && speed > CITY_SPEED_LIMIT){
