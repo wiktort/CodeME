@@ -27,13 +27,7 @@ const values = {
 const messages = ['przekroczyłeś prędkość', 'jedziesz prawidłowo']
 
 const speedTest = (speed, typeOfRoad = 'city') => {
-    let result;
 
-    if ( speed <= values[typeOfRoad].maxSpeed ){
-        result = values[typeOfRoad].msgPrefix + ": " + messages[1];
-    } else {
-        result = values[typeOfRoad].msgPrefix + ": " + messages[0];
-    };
+    return values[typeOfRoad].msgPrefix + ": " + (speed <= values[typeOfRoad].maxSpeed ? messages[1] : messages[0]);
 
-    return result
 };

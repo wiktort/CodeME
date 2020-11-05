@@ -10,8 +10,9 @@
 */
 
 const square = function(number){
+    const min = Number.isInteger(number) ? number : Math.ceil(number);
 
-    for(i = Math.ceil(number); i <= Math.floor(number+10); i++){
-        console.log(i**2);
-    }
-}
+    for(let i = min; i <= number + 10; i++){
+        console.log(i*i);
+    };
+};
