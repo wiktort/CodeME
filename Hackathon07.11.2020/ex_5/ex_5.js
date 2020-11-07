@@ -3,35 +3,34 @@ Zamienić html na obiekt JS
 */
 
 
-const html = {
-    article: {
-        attributes: {
-            id: "art-2",
-            class: "box",
-            role: "listitem",
-        },
-        value: "",
-        chiildren: {
-            h2: {
-                attributes: {
-                    class: "box_title",
-                },
-                value: "Tytuł",
-                chiildren:{
-                    b: {
-                        attributes: {},
+const article = {
+    nodeName: "article", 
+    id: "art-2",
+    className: "box",
+    role: "listitem",
+    childNodes: [
+            {
+                nodeName: "h2",
+                className: "box_title",
+                childNodes:[
+                    {
+                        text: "Tytuł",
+                    },
+                    {
+                        nodeName: "b",
                         value: "fsfdd",
-                        chiildren: {},
-                    }
-                }
+                        childNodes: [],
+                    },
+                ],
             },
-            div: {
-                attributes: {
-                    class: "box_content",
-                },
-                value: "jakiś tekst",
-                chiildren: {},
+            {
+                nodeName: "div",
+                className: "box_content",
+                childNodes: [
+                    {
+                        text: "jakiś tekst",
+                    },
+                ],
             },
-        }
-    },
+    ],
 }
