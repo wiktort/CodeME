@@ -53,7 +53,7 @@ insertWord();
 
 //sprawdzanie litery i ewentualne jej wstawienie zamiast odpowiedniego podkreślnika
 const letterCheck = function(element){
-        const index = this.word.indexOf(element);
+        const index = this.word.indexOf(element.value);
         //jeżeli podana litera jest w słowie to wstaw ją zamiast podkreślinika i wyczyść input
         if(index !== -1){
             document.querySelector(`#letter${index}`).textContent = this.word[index];
