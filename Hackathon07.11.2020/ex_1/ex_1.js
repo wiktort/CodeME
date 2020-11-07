@@ -52,16 +52,20 @@ const insertWord = () =>{
 insertWord();
 
 //sprawdzanie litery i ewentualne jej wstawienie zamiast odpowiedniego podkreślnika
-const letterCheck = function(value){
-        const index = this.word.indexOf(value);
+const letterCheck = function(element){
+        const index = this.word.indexOf(element);
+        //jeżeli podana litera jest w słowie to wstaw ją zamiast podkreślinika i wyczyść input
         if(index !== -1){
             document.querySelector(`#letter${index}`).textContent = this.word[index];
-            value = "";
+            element.value = "";
+            // jeżeli wszystkie litery zostały podane to wyświetl alert
             wordBox.textContent === this.word.join("") ? alert("Zwycięstwo!!!") : 0;
         } else {
+            //w przypadku podania błędnej litery zmiejsz ilość żyć, wyświetl ją i wyczyść input
             this.lifes -= 1;
             lifes.textContent = this.lifes;
-            input.value = "";
+            element.value = "";
+            //jeżeli życia zostały wyczerpane to wyświetl alert i odśwież grę
             if(randomWord.lifes <= 0){
                 insertWord(); 
                 alert("Game Over");
@@ -73,7 +77,7 @@ const letterCheck = function(value){
 //obsługa eventów
 const buttons = (e) => {
     if(e.target.id === "check"){
-        letterCheck.call(randomWord, input.value)
+        letterCheck.call(randomWord, input)
     };
 
     if(e.target.id === "again"){
