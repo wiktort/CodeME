@@ -53,10 +53,18 @@ insertWord();
 
 //sprawdzanie litery i ewentualne jej wstawienie zamiast odpowiedniego podkreślnika
 const letterCheck = function(element){
-        const index = this.word.indexOf(element.value);
+        // stworzenie tablicy z indexami liter
+        const index = this.word.reduce((acc, letter, index)=>{
+            letter === element.value 
+               ? acc.push(index)
+               : "brak";
+            return acc;
+        }, []);
         //jeżeli podana litera jest w słowie to wstaw ją zamiast podkreślinika i wyczyść input
-        if(index !== -1){
-            document.querySelector(`#letter${index}`).textContent = this.word[index];
+        if(index.length > 0){
+            index.forEach((letterIndex) => {
+                document.querySelector(`#letter${letterIndex}`).textContent = this.word[letterIndex];
+            });
             element.value = "";
             // jeżeli wszystkie litery zostały podane to wyświetl alert
             wordBox.textContent === this.word.join("") ? alert("Zwycięstwo!!!") : 0;
