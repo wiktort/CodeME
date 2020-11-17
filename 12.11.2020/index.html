@@ -1,0 +1,86 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>Zadanie 4.1</h1>
+            <h2>Treść</h2>
+                <ul>
+                    <li>
+                        Napisz funkcje która jako argument przyjmie dowolne słowo (ciag znaków).
+                        Funkcja domyslnie, jezeli nie zostanie podany ciąg w parametrze powinna przyjąć słowo 'koparka'.
+                        Funkcja powinna zwrocic obiekt w ktorym kluczem bedzie pojedynczy znak a wartościa będzie ilość wystąpien danego znakunp. fn('koparka')
+                    </li>
+
+                </ul>
+            <h2>Rozwiązanie:</h2>
+                <p>W konsoli wpisz: splitToObj("twoje-słowo");</p>
+    </section>
+    <section>
+        <h1>Zadanie 4.2</h1>
+            <h2>Treść</h2>
+                <ul>
+                    <li>
+                        Napisz funkcje, która przyjmie dowolna liste skladajaca sie z elementow, ktore te są lista, i zwroci listę z elementami które są na jednym poziomie. Czyli np. przekazujemy funkcji listę ['a', 23, ['b', 54], [{}, 'lol', [56, 'gra']]], a funkcja zwroci ['a', 23, 'b', 54, {}, 'lol', 56, 'gra']
+                    </li>
+                </ul>
+            <h2>Rozwiązanie:</h2>
+                <p>W konsoli wpisz: flattenArray(['a', 23, ['b', 54], [{}, 'lol', [56, 'gra']]]);</p>
+    </section>
+    <section>
+        <h1>Zadanie 4.3</h1>
+            <h2>Treść</h2>
+                <ul>
+                    <li>
+                        Wyobraź sobie, że nie istnieje Math. Utwórz obiekt MyMath, który posiada następujące metody: 
+                        <ul>
+                            <li> MojMath.rand(min, max, wlacznie) — losuje liczbę z przedziału od min do max, włącznie, jeśli wlacznie ma wartość true.</li>
+                            <li>MojMath.min(tablica) — zwraca najmniejszy element tablicy.</li>
+                            <li>MojMath.max(tablica) — zwraca największy element tablicy.</li>
+                        </ul>
+                    </li>
+                </ul>
+            <h2>Rozwiązanie:</h2>
+                <p>W konsoli wpisz:
+                    <ul>
+                        <li>instance.rand(min, max, boolean)</li>
+                        <li>instance.min(tablica)</li>
+                        <li>instance.max(tablica)</li>
+                    </ul>
+                </p>
+    </section>
+    <section>
+        <h1>Zadanie 4.4</h1>
+            <h2>Treść</h2>
+                <ul>
+                    <li>
+                        Utwórz obiekt shape (kształt), który ma właściwość type (typ) oraz metodę getType() (pobierz typ).
+                        Zdefiniuj funkcję konstruktora Triangle() (trójkąt), którego prototypem jest shape. Obiekty tworzone za pomocą Triangle() powinny mieć trzy właściwości własne: a, b i c, przechowujące długość boków trójkąta. Dodaj do prototypu nową metodę o nazwie getPerimeter() (pobierz obwód).
+                    </li>
+                </ul>
+            <h2>Rozwiązanie:</h2>
+                <p>Przetestuj poprawność implementacji za pomocą następującego kodu:
+                    <ul>
+                        <li>var t = new Triangle(1, 2, 3);</li>
+                        <li>t.constructor === Triangle;</li>
+                        <li>shape.isPrototypeOf(t);</li>
+                        <li>t.getPerimeter();</li>
+                        <li>t.getType();</li>
+                    </ul>
+                </p>
+    </section>
+    <button><a href="../">Powrót</a></button>
+<script src="ex_4_1.js"></script>    
+<script src="ex_4_2.js"></script> 
+<script src="ex_4_3.js"></script> 
+<script src="ex_4_4.js"></script> 
+</body>
+</html>
+
