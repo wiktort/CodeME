@@ -25,10 +25,12 @@ function Triangle(a = 1, b = 1, c = 1){
     this.a = a;
     this.b = b;
     this.c = c;
+
 };
 
-Triangle.prototype.__proto__ = Object.create(shape);
+Object.setPrototypeOf(Triangle.prototype, shape);
 
 Triangle.prototype.getPerimeter = function(){
          return this.a + this.b + this.c;
 };
+

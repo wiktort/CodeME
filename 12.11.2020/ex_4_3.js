@@ -5,11 +5,11 @@
   MojMath.max(tablica) — zwraca największy element tablicy.
 */
 
-function MyMath (){
+const MyMath = {
 
 };
 
-MyMath.prototype.rand = function(min, max, including = false){
+MyMath.rand = function(min, max, including = false){
 
   if (min >= max) {
     throw new Error("max must be greater than min");
@@ -44,7 +44,7 @@ MyMath.prototype.rand = function(min, max, including = false){
   return parseInt(randomNumber() * ((max - 1 ) - (min + 1) + 1) + min + 1);
 };
 
-MyMath.prototype.sort = function(array){
+MyMath.sort = function(array){
     let nextRound = true;
     while(nextRound){
         nextRound = false;
@@ -59,15 +59,14 @@ MyMath.prototype.sort = function(array){
     return array;
 };
 
-MyMath.prototype.min = function(array){
-    return this.sort(array)[0];
+MyMath.min = function(...numbers){
+    return this.sort(numbers)[0];
 };
 
-MyMath.prototype.max = function(array){
-    return this.sort(array)[array.length-1];
+MyMath.max = function(...numbers){
+    return this.sort(numbers)[numbers.length-1];
 };
 
-const instance = new MyMath;
 
 
 

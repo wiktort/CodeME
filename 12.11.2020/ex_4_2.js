@@ -6,21 +6,28 @@
   a funkcja zwroci ['a', 23, 'b', 54, {}, 'lol', 56, 'gra']
 */
 
+
 const flattenArray = (data) => {
-  let hadArray = true;
+    let hadArray = false;
+    
+    makeNewOne = (data) => {
+        hadArray = false;
 
-    while(hadArray){
-      hadArray = false;
-        data.reduce((acc, current, index) => {
-        if(Array.isArray(current)){
-          acc.splice(index, 1, ...current);
-          hadArray = true;
-        } else {
-          acc[index] = current;
-        };
-        return acc;
-        },data);
+        return data.reduce((acc, current) => {
+
+            if(Array.isArray(current)){
+                acc.push(...current);
+                hadArray = true;
+            } else {
+                acc.push(current);
+            };
+
+            if(hadArray){
+                return makeNewOne(acc);
+            } else {
+                return acc;
+            }
+        },[]);
     };
-    return data;
+    return makeNewOne(data);
 };
-

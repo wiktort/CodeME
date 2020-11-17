@@ -16,10 +16,10 @@ np. fn('koparka')
 }
 */
 
+
 const splitToObj = (word) => {
-    return [...word].reduce((acc, current) => {
-      const reg = new RegExp(`${current}`, "g");
-      acc[current] = word.match(reg).toString().replaceAll(",", "").length;
-        return acc;
-    }, {})
+  return [...word].reduce((acc, current) => {
+    acc[current] ? acc[current]++ : acc[current] = 1;
+      return acc;
+  }, {})
 };
