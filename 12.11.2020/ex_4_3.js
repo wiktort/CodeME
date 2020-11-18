@@ -60,11 +60,11 @@ MyMath.sort = function(array){
 };
 
 MyMath.min = function(...numbers){
-    return this.sort(numbers)[0];
+    return MyMath.sort(numbers)[0];
 };
 
 MyMath.max = function(...numbers){
-    return this.sort(numbers)[numbers.length-1];
+    return MyMath.sort(numbers)[numbers.length-1];
 };
 
 

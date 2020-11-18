@@ -19,7 +19,7 @@ np. fn('koparka')
 
 const splitToObj = (word) => {
   return [...word].reduce((acc, current) => {
-    acc[current] ? acc[current]++ : acc[current] = 1;
+    acc[current] = (acc[current]  || 0) + 1;
       return acc;
   }, {})
 };
