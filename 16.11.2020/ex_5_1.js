@@ -8,11 +8,20 @@
   funkcja powinna zwrocic liste zmodyfikowanych elementow
 */
 
-const editElementsWithClass = (selektor) => {
-    const elements = [...document.querySelector(selektor).children];
-    return elements.filter(item => {
-        return item.classList.contains("green");
-    }).map(item => {
+// const editElementsWithClass = (selektor) => {
+//     const elements = [...document.querySelector(selektor).children];
+//     return elements.filter(item => {
+//         return item.classList.contains("green");
+//     }).map(item => {
+//         item.style.color = "#0f0";
+//         item.style.backgroundColor = "#eee";
+//         return item;
+//     });
+// };
+
+const editElementsWithClass = (element) => {
+    const elements = [...document.querySelectorAll(`${element.tagName} .green`)];
+    return elements.map(item => {
         item.style.color = "#0f0";
         item.style.backgroundColor = "#eee";
         return item;

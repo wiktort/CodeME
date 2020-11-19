@@ -8,13 +8,21 @@
   funkcja powinna zwrocic ilosc zmodyfikowanych elementow
 */
 
-const editElementsWithData = (selektor) => {
-    const elements = [...document.querySelector(selektor).children];
+// const editElementsWithData = (selektor) => {
+//     const elements = [...document.querySelector(selektor).children];
+//     return elements.reduce((acc, item) => {
+//         if(item.dataset.uid && item.dataset.uid.startsWith("list")) {
+//             item.style.backgroundColor = "#ccc";
+//             acc += 1;
+//         };  
+//         return acc;
+//     },0);
+// };
+
+const editElementsWithData = (element) => {
+    const elements = [...document.querySelectorAll(`${element.tagName} [data-uid|='list']`)];
     return elements.reduce((acc, item) => {
-        if(item.dataset.uid && item.dataset.uid.startsWith("list")) {
             item.style.backgroundColor = "#ccc";
-            acc += 1;
-        };  
-        return acc;
+        return acc += 1;
     },0);
 };
