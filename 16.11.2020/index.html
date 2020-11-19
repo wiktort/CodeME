@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>CODE:ME-EZ3 - EX 5</title>
+        <style>
+            html,
+            body {
+                background-color: #fff;
+                width: 100%;
+                height: 100%;
+            }
+
+            ul {
+              list-style: square;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+
+          <ul>
+            <li class="green" data-uid="list-d-1">Pierwszy</li>
+            <li>Drugi</li>
+            <li data-uid="el-d-1">Trzeci</li>
+            <li class="green">Czwarty</li>
+          </ul>
+
+        </div>
+
+        <section>
+            <h1>Zadanie 5.1</h1>
+                <h2>Treść</h2>
+                    <ul>
+                        <li>
+                            w pliku ex_5.html znajduje sie lista ul. Napisz funkcje ktora przyjmie dowolny element (w naszym przypadku obiekt elementu ul) i znajdzie w nim elementy o klasie green i wpisze za pomoca style kolor czcionki o wartosci #0f0 i tło o wartoci #eee. funkcja powinna zwrocic liste zmodyfikowanych elementow
+                        </li>
+    
+                    </ul>
+                <h2>Rozwiązanie:</h2>
+                    <p>W konsoli wpisz: editElementsWithClass(selektor);</p>
+        </section>
+        <section>
+            <h1>Zadanie 5.2</h1>
+                <h2>Treść</h2>
+                    <ul>
+                        <li>
+                            w pliku ex_5.html znajduje sie lista ul. Napisz funkcje ktora przyjmie dowolny element (w naszym przypadku obiekt elementu ul) i znajdzie w nim elementy o atrybucie data-uid, ktorych wartosc zaczyna sie od list... i zmieni kolor tla tych elementow na #ccc. funkcja powinna zwrocic ilosc zmodyfikowanych elementow
+                        </li>
+    
+                    </ul>
+                <h2>Rozwiązanie:</h2>
+                    <p>W konsoli wpisz: editElementsWithData(selektor);</p>
+        </section>
+        
+        <script src="ex_5_1.js"></script>
+        <script src="ex_5_2.js"></script>
+    </body>
+
+</html>
