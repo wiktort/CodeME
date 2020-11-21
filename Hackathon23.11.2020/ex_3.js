@@ -37,7 +37,7 @@ const divApp = document.querySelector("div#app");
 
 const listener = (e)=>{
     if(e.target.parentNode.tagName === "TR" && e.target.tagName === "TD" ){
-        alert(`wybrana cena: ${collection[e.target.parentNode.id]["mid"]}`);
+        alert(`wybrana cena: ${collection[e.target.parentNode.dataset.number]["mid"]}`);
     };
 };
   
@@ -47,7 +47,7 @@ const createTable = (data, element) => {
     const table = document.createElement("table");
 
     table.innerHTML = "<thead><tr><th>Date</th><th>Price</th></tr><thead>" + collection.map((item, index) => {
-        return `<tr id="${index}"><td>${item["effectiveDate"]}</td><td>${item["mid"]}</td></tr>`;
+        return `<tr data-number="${index}"><td>${item["effectiveDate"]}</td><td>${item["mid"]}</td></tr>`;
     }).join("");
 
     element.appendChild(table);
