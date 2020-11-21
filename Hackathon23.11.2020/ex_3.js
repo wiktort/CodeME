@@ -29,33 +29,38 @@ const collection = [
     {"no":"218/A/NBP/2020","effectiveDate":"2020-11-06","mid":5.0196}
   ];
 
-//
+const divApp = document.querySelector("div#app");
 //
 // Functions
-  
-const createTable = (data) => {
+//
 
-    const divApp = document.querySelector("div#app");
+
+const listener = (e)=>{
+    if(e.target.parentNode.tagName === "TR" && e.target.tagName === "TD" ){
+        alert(`wybrana cena: ${collection[e.target.parentNode.id]["mid"]}`);
+    };
+};
+  
+const createTable = (data, element) => {
+
+   
     const table = document.createElement("table");
 
     table.innerHTML = "<thead><tr><th>Date</th><th>Price</th></tr><thead>" + collection.map((item, index) => {
         return `<tr id="${index}"><td>${item["effectiveDate"]}</td><td>${item["mid"]}</td></tr>`;
     }).join("");
 
-    divApp.appendChild(table);
+    element.appendChild(table);
+
+    table.addEventListener("click", listener);
 };
 
-const listener = (e)=>{
-    if(e.target.parentNode.tagName === "TR"){
-        alert(`wybrana cena: ${collection[e.target.parentNode.id]["mid"]}`);
-    };
-};
+
 
 
 //
 // Inits
 //
 
-createTable(collection);
+createTable(collection, divApp);
 
-document.addEventListener("click", listener);
