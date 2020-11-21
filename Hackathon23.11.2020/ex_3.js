@@ -36,9 +36,12 @@ const divApp = document.querySelector("div#app");
 
 
 const listener = (e)=>{
-    if(e.target.parentNode.tagName === "TR" && e.target.tagName === "TD" ){
-        alert(`wybrana cena: ${collection[e.target.parentNode.dataset.number]["mid"]}`);
-    };
+    // if(e.target.closest.tagName === "TR" && e.target.tagName === "TD" ){
+    //     console.log(e.target.closest("tr").rowIndex)
+    //    const index = e.target.closest("tr").rowIndex - 1;
+       alert(`wybrana cena: ${collection[e.target.closest("tr").dataset.number]["mid"]}`);
+        // alert(`wybrana cena: ${collection[e.target.parentNode.dataset.number]["mid"]}`);
+    // };
 };
   
 const createTable = (data, element) => {
@@ -46,13 +49,18 @@ const createTable = (data, element) => {
    
     const table = document.createElement("table");
 
-    table.innerHTML = "<thead><tr><th>Date</th><th>Price</th></tr></thead>" + '<tbody>' +collection.map((item, index) => {
-        return `<tr data-number="${index}"><td>${item["effectiveDate"]}</td><td>${item["mid"]}</td></tr>`; 
-    }).join("") + '</tbody>';
+    table.innerHTML = "<thead><tr><th>Date</th><th>Price</th></tr></thead>"; 
+    
+    const tbody = document.createElement("tbody");
 
+    tbody.innerHTML += collection.map((item, index) => {
+        return `<tr data-number="${index}"><td>${item["effectiveDate"]}</td><td>${item["mid"]}</td></tr>`; 
+    }).join("");
+
+    table.appendChild(tbody);
     element.appendChild(table);
 
-    table.addEventListener("click", listener);
+    tbody.addEventListener("click", listener);
 };
 
 
