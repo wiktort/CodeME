@@ -61,9 +61,6 @@ const createSectionsContent = (data) => {
 };
 
 
-
-
-
 //
 // Inits
 //
@@ -73,10 +70,13 @@ document.addEventListener("DOMContentLoaded", function(){
     div_app.appendChild(container);
     div_app.appendChild(section);
     createSectionsContent(data[0]);
+
+    
+    container.addEventListener("click", function(e){
+        if(e.target.dataset.index)
+        createSectionsContent(data[e.target.dataset.index]);
+    });
 });
 
-container.addEventListener("click", function(e){
-    if(e.target.dataset.index)
-    createSectionsContent(data[e.target.dataset.index]);
-});
+
 
