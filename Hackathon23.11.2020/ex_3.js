@@ -46,9 +46,9 @@ const createTable = (data, element) => {
    
     const table = document.createElement("table");
 
-    table.innerHTML = "<thead><tr><th>Date</th><th>Price</th></tr><thead>" + collection.map((item, index) => {
-        return `<tr data-number="${index}"><td>${item["effectiveDate"]}</td><td>${item["mid"]}</td></tr>`;
-    }).join("");
+    table.innerHTML = "<thead><tr><th>Date</th><th>Price</th></tr></thead>" + '<tbody>' +collection.map((item, index) => {
+        return `<tr data-number="${index}"><td>${item["effectiveDate"]}</td><td>${item["mid"]}</td></tr>`; 
+    }).join("") + '</tbody>';
 
     element.appendChild(table);
 
@@ -61,6 +61,8 @@ const createTable = (data, element) => {
 //
 // Inits
 //
+document.addEventListener("DOMContentLoaded", function(){
+    createTable(collection, divApp);
+});
 
-createTable(collection, divApp);
 
