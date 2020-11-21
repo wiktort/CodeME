@@ -69,8 +69,64 @@ const createTable = (data, element) => {
 //
 // Inits
 //
-document.addEventListener("DOMContentLoaded", function(){
+/* document.addEventListener("DOMContentLoaded", function(){
     createTable(collection, divApp);
 });
+ */
 
+
+
+
+
+ // Funkcyjne rozwiązanie Marcina
+
+ /* 
+
+const colls = ['Date', 'Price'];
+
+const createTHeadCells = list => list.map(name => `<th>${name}</th>`).join('');
+
+const createTHead = cells => `<thead><tr>${cells}</tr></thead>`;
+
+const createTBodyRows = createTBodyCells => list => list
+  .map(item => `<tr data-price="${item[1]}" data-no-go="lol">${createTBodyCells(item)}</tr>`)
+  .join('');
+
+const createTBodyCells = list => list.map(item => `<td><span>${item}</span></td>`).join('');
+
+const createTBody = rows => `<tbody>${rows}</tbody>`;
+
+const selector = data => data.map(({effectiveDate, mid}) => [effectiveDate, mid]);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const appElement = document.getElementById('app');
+
+  const ex3Element = document.createElement('div');
+  ex3Element.id = 'ex-3';
+
+  const table = document.createElement('table');
+
+  const prepareRows = createTBodyRows(createTBodyCells);
+
+  table.innerHTML = createTHead(createTHeadCells(colls)) + createTBody(
+    prepareRows(selector(collection))
+  );
+
+  table.tBodies[0].addEventListener('click', function (e) {
+    //const index = e.target.closest('tr').rowIndex - 1;
+
+    //alert(`Klik: ${collection[index].mid}`);
+
+    const tr = e.target.closest('tr');
+    alert(`Klik: ${tr.dataset.price}`);
+  });
+
+  ex3Element.appendChild(table);
+  appElement.appendChild(ex3Element);
+});
+
+
+
+
+ */
 
