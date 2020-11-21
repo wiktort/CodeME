@@ -49,15 +49,18 @@ section.id = "tabContent";
 
 // create tabs
 const createTabs = (data) => {
-    data.forEach((item, index) => {
-        container.innerHTML += `<button data-index="${index}">${item.title}</button>`
-     });
+    // container.innerHTML += `<button data-index="${index}">${item.title}</button>`;
+
+    container.innerHTML = '<ul role="tablist">' + data.map((item, index) => {
+        return `<li class="tab" role="tab" data-index="${index}">${item.title}</li>`
+     }).join("") + '</ul>';
 };
 
 //create sections 
 
 const createSectionsContent = (data) => {
-    section.innerHTML = `<h1>${data.artist}</h1><h2>${data.album}</h2><h3>${data.title}</h3>`
+    section.innerHTML = `<h1>Artist: ${data.artist}</h1><h2>Album: ${data.album}</h2><h3>Title: ${data.title}</h3>
+    <div>-------------------</div><p>${data.lyric}</p>`
 };
 
 
@@ -65,16 +68,21 @@ const createSectionsContent = (data) => {
 // Inits
 //
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(e){
     createTabs(data);
     div_app.appendChild(container);
     div_app.appendChild(section);
     createSectionsContent(data[0]);
+    document.querySelector("[data-index='0']").classList.add("active");
 
-    
     container.addEventListener("click", function(e){
-        if(e.target.dataset.index)
+        if(e.target.dataset.index){
+        [...document.getElementsByClassName("tab")].forEach(item => {
+            item.classList.remove("active");
+        });
+        e.target.classList.add("active");
         createSectionsContent(data[e.target.dataset.index]);
+        };
     });
 });
 

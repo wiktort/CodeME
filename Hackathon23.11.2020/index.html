@@ -29,13 +29,26 @@ Layout: default
                 width: 70%;
                 margin: 5vh auto 5vh auto;
             }
+            ul[role="tablist"]{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                /* background-color: #333; */
+            }
+            li[role="tab"]{
+                list-style: none;
+                padding: 3px;
+                background-color: #777;
+                border: 1px solid #333;
+                color: #fff;
+            }
+            li[role="tab"].active {
+                border-width: 2px;
+                background-color: #222;
+            }
             section#tabContent {
                 padding: 0 5vw 0 5vw;
                 border: 1px solid #333;
-            }
-            .tab {
-                display: inline-block;
-                border: 1px solid #777;
             }
         </style>
     </head>
